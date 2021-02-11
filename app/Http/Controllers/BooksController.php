@@ -19,8 +19,12 @@ class BooksController extends Controller
     public function index()
     {
         $books = Books::all();
+        $user =auth()->user()->user_rights;
 
-        return view('books.index', compact('books'));
+        return view('books.index', [
+            'books'=>$books,
+            'user'=>$user
+        ]);
 
     }
 
@@ -65,7 +69,15 @@ class BooksController extends Controller
      */
     public function show(Books $book)
     {
-        return view('books.show', compact('book'));
+        $genre = Books::where('genre', '=', $book->genre)->inRandomOrder()->take(2)->get();
+       
+        return view('books.show', [
+            'book' => $book,
+            'genre' => $genre
+            
+
+        ]);
+        
     }
 
     /**

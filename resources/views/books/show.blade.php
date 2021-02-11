@@ -76,9 +76,24 @@
                     </div>
                 </div>
             </div>
+            @foreach($genre as $book)
+            <h1 class="flex items-center">Suggestions</h1>
+            <div class="w-2/3 p-4 flex justify-center  flex-col">
+            <h2 class="text-gray-900 text-2xl">{{implode(' ', (array_reverse(explode(', ',$book->title))))}}</h2>
+            <p class="mt-6 text-gray-600 text-sm whitespace-wrap">{{ $book->description}}</p>
+            <div class="flex mt-2">
+                <div class=" text-l italic mb-4 pt-5">{{$book->author}}</div>
+            </div>
+            <div class="flex justify-between mt-3">
+              <h1 class=" bg-gray-200 rounded px-3 py-2 uppercase text-sm font-semibold text-gray-700">{{$book->genre}}</h1>
+              
+          </div>
+          @endforeach
             <div class="block mt-8">
                 <a href="{{ route('books.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Back to list</a>
             </div>
         </div>
     </div>
 </x-app-layout>
+<x-footer>
+</x-footer>

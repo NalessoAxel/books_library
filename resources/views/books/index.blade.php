@@ -6,10 +6,12 @@
     </x-slot>
 
     <div class="max-w-9/12 mx-auto py-10 sm:px-6 lg:px-8">
+        @if($user=='admin')
         <div class="block mb-8">
             <a href="{{ route('books.create') }}"
                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add Book</a>
         </div>
+        @endif
         <div class="flex flex-col">
             <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -56,10 +58,11 @@
                                     <td class="px-6 py-4 ">
                                         {{$book->quantity}}
                                     </td>
-
+                                   
                                     <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
                                         <a href="{{route('books.show', $book->id) }}"
                                             class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">View</a>
+                                            @if($user=='admin')
                                         <a href="{{route('books.edit', $book->id) }}"
                                             class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">Edit</a>
                                         <form class="inline-block" action="{{ route('books.destroy', $book->id) }}"
@@ -70,8 +73,9 @@
                                                 value="Delete">
                                         </form>
                                     </td>
-                                </tr>
-
+                                    
+                                </tr>   
+                                @endif
                                 @endforeach 
                             </tbody>
                         </table>
@@ -84,3 +88,5 @@
     </div>
     </div>
 </x-app-layout>
+<x-footer>
+</x-footer>
