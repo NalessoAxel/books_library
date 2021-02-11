@@ -1,4 +1,4 @@
-# Axel's library of BeCode
+# Axel's library 
 
 - Type of challenge: consolidation
 - Duration: 3 days
