@@ -31,9 +31,9 @@
           </div>
             
         </div>
-        <div class="lg:absolute lg:inset-y-0 lg:top-56  lg:left-2/3 lg:w-1/2">
-            <img class="h-28 w-28 object-cover sm:h-72 md:h-96 lg:w-auto lg:h-96" src="https://images.unsplash.com/photo-1554900773-4dd76725f876?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1649&q=80" alt="">
-          </div>
+        {{-- <div class="lg:relative lg:inset-y-0 lg:top-56  lg:left-2/3 lg:w-1/2">
+            <img class="h-14 w-14 object-cover sm:h-72 md:h-96 lg:w-auto lg:h-96" src="https://images.unsplash.com/photo-1554900773-4dd76725f876?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1649&q=80" alt="">
+          </div> --}}
     </div>
 </x-app-layout>
 <x-footer>
